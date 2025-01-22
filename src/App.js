@@ -5,12 +5,8 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import MainHeader from "./MainHeader";
 import Container from "./Container";
+import tasksTable from "./data/exampleTasks";
 
-const tasksTable = [
-  { id: 1, content: "przejść na Reacta", status: "toDo" },
-  { id: 2, content: "zjeść obiad", status: "done" },
-  { id: 3, content: "zrobić kolacje", status: "done" },
-];
 const hideDoneTasks = false;
 
 function App() {
