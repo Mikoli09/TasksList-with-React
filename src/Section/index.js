@@ -1,6 +1,4 @@
-
 import "./style.css";
-
 
 const Section = ({headerContent, sectionContent }) => (
 
@@ -9,6 +7,5 @@ const Section = ({headerContent, sectionContent }) => (
         {sectionContent}
     </section>
 );
-
 
 export default Section;
