@@ -19,8 +19,7 @@ Enjoy and keep your tasks organized.
 - **React** - JavaScript library for building user interfaces with components.
 - **Create React App** - A tool that sets up a React project with everything you need to start.
 - **Webpack** - Bundles JavaScript, CSS, and assets for optimized performance.  
-
-
+  
 
 ## Available Scripts
 
