@@ -18,10 +18,9 @@ Enjoy and keep your tasks organized.
 - **JavaScript** - Adds interactivity and dynamic behavior to the website.
 - **React** - JavaScript library for building user interfaces with components.
 - **Create React App** - A tool that sets up a React project with everything you need to start.
-- **Webpack** - Bundles JavaScript, CSS, and assets for optimized performance.
+- **Webpack** - Bundles JavaScript, CSS, and assets for optimized performance.  
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
