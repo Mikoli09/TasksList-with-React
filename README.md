@@ -9,8 +9,9 @@ You may find here a simple task manager.
 You can add new positions, change status and delete tasks.  
 If you want to hide done tasks or finish all of them then use buttons on the right side.  
 
-Enjoy and keep your tasks organized.
+Enjoy and keep your tasks organized.  
 
+![taskslistGIF](./src/assets/tasksList.gif)
 
 ## Technologies used
 - **HTML** - Provides website structure,
