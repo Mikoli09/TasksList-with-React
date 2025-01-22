@@ -1,0 +1,22 @@
+.header__span {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.header__button {
+    font-size: 18px;
+    color: teal;
+    border: none;
+    background-color: white;
+    transition: 0.5s;
+}
+
+.header__button:hover {
+    cursor: pointer;
+    color: hsl(180, 100%, 35%);
+}
+
+.header__button:disabled {
+    color: gray;
+    cursor: auto;
+}

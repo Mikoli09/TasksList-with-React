@@ -8,23 +8,29 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-}
-
-
-.body {
-  font-family: "Montserrat", sans-serif;
   background-color: #EEEEEE;
   padding: 5px;
 }
 
-.main {
-  max-width: 900px;
-  min-width: 200px;
-  padding: 20px 10px;
-  margin: 10px auto;
+.section {
+  background-color: white;
+  margin: 20px 10px;
+  border: none;
+  text-align: center;
 }
 
-.main__header {
-  max-width: 90%;
-  margin: 20px 10px;
+.section__header {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 15px;
+  text-align: left;
+  border-bottom: 2px solid;
+  border-color: #EEEEEE;
 }
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
