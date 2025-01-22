@@ -11,3 +11,16 @@ body {
   background-color: #EEEEEE;
   padding: 5px;
 }
+
+@media (max-width: 767px) {
+  .form {
+      flex-direction: column;
+      flex-wrap: wrap;
+  }
+
+  .header__container {
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 10px
+  }
+}
