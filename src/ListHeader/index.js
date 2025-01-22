@@ -11,7 +11,7 @@ const everyTaskFinished = (tasksTable) => {
     return tasksTable.every(checkIfAllDone) ? true : false;
 };
 
-const Buttons = ({tasks, hideDoneTasks}) => (
+const ListHeader = ({tasks, hideDoneTasks}) => (
     <div className="header__container">
         <span className="header__span">Lista zadań</span>
         <button className={`header__button ${headerButtonVisibility(tasks)}`}>{textSwap(hideDoneTasks)}</button>
@@ -19,4 +19,4 @@ const Buttons = ({tasks, hideDoneTasks}) => (
     </div>
 );
 
-export default Buttons
+export default ListHeader

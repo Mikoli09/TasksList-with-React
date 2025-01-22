@@ -1,7 +1,7 @@
 
 import Form from "./Form";
 import Tasks from "./Tasks";
-import Buttons from "./Buttons";
+import ListHeader from "./ListHeader";
 import Section from "./Section";
 import MainHeader from "./MainHeader";
 import Container from "./Container";
@@ -20,7 +20,7 @@ function App() {
         sectionContent={<Form />}
       />
       <Section
-        headerContent={<Buttons tasks={tasksTable} hideDoneTasks={hideDoneTasks} />}
+        headerContent={<ListHeader tasks={tasksTable} hideDoneTasks={hideDoneTasks} />}
         sectionContent={<Tasks tasks={tasksTable} hideDoneTasks={hideDoneTasks} />}
       />
     </Container>
