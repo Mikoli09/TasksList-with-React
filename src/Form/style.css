@@ -4,7 +4,7 @@
     padding: 15px;
 }
 
-.newTask {
+.form__task {
     padding: 10px;
     overflow-x: scroll;
     max-width: 100%;
@@ -14,7 +14,7 @@
     flex-grow: 1;
 }
 
-.insertTaskButton {
+.form__insertTaskButton {
     background-color: teal;
     font-size: 18px;
     color: white;
@@ -22,4 +22,9 @@
     padding: 10px;
     cursor: pointer;
     transition: 0.5s;
+}
+
+.form__insertTaskButton:hover {
+    background-color: hsl(180, 100%, 30%);
+    transform: scale(1.02);
 }
