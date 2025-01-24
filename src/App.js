@@ -5,10 +5,17 @@ import Section from "./Section";
 import MainHeader from "./MainHeader";
 import Container from "./Container";
 import tasksTable from "./data/exampleTasks";
+import { useState } from "react";
 
-const hideDone = false;
 
 function App() {
+
+  const [hideDone, setHideDone] = useState(false);
+
+  const toggleHideDone = () => {
+    setHideDone(hideDone => !hideDone);
+  };
+
   return (
     <Container>
       <MainHeader
@@ -19,8 +26,8 @@ function App() {
         sectionContent={<Form />}
       />
       <Section
-        headerContent={<ListHeader tasks={tasksTable} hideDone={hideDone} />}
-        sectionContent={<Tasks tasks={tasksTable} hideDone={hideDone} />}
+        headerContent={<ListHeader tasks={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} />}
+        sectionContent={<Tasks tasks={tasksTable} toggleHideDone={toggleHideDone} />}
       />
     </Container>
   );
