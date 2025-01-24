@@ -6,7 +6,7 @@ import MainHeader from "./MainHeader";
 import Container from "./Container";
 import tasksTable from "./data/exampleTasks";
 
-const hideDoneTasks = false;
+const hideDone = false;
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
         sectionContent={<Form />}
       />
       <Section
-        headerContent={<ListHeader tasks={tasksTable} hideDoneTasks={hideDoneTasks} />}
-        sectionContent={<Tasks tasks={tasksTable} hideDoneTasks={hideDoneTasks} />}
+        headerContent={<ListHeader tasks={tasksTable} hideDone={hideDone} />}
+        sectionContent={<Tasks tasks={tasksTable} hideDone={hideDone} />}
       />
     </Container>
   );
