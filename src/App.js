@@ -34,6 +34,17 @@ function App() {
     setTasks((tasksTable) => tasksTable.filter((elementOfTable) => elementOfTable.id !== id));
   };
 
+  const toggleTaskDone = (id) => {
+    setTasks((tasksTable) => tasksTable.map((task) => {
+      if (task.id === id) {
+        return { ...task, status: task.status === "toDo" ? "done":"toDo"}
+      }
+      return task;
+    }))
+
+  };
+
+
   return (
     <Container>
       <MainHeader
@@ -45,7 +56,7 @@ function App() {
       />
       <Section
         headerContent={<ListHeader tasks={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} toggleAllDone={toggleAllDone} />}
-        sectionContent={<Tasks tasks={tasksTable} hideDone={hideDone} removeTasks={removeTasks} />}
+        sectionContent={<Tasks tasks={tasksTable} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
       />
     </Container>
   );

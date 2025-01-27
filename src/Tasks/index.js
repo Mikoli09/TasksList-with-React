@@ -1,7 +1,7 @@
 import "./style.css"
 
 
-const Tasks = ({ tasks, hideDone, removeTasks }) => {
+const Tasks = ({ tasks, hideDone, removeTasks, toggleTaskDone }) => {
     const checkIfHide = (elementStatus, variableStatus) => {
         if (!variableStatus) {
             return "";
@@ -16,7 +16,9 @@ const Tasks = ({ tasks, hideDone, removeTasks }) => {
         <ul className="tasks">
             {tasks.map(task => (
                 <li key={task.id} className={`task${checkIfHide(task.status, hideDone)}`}>
-                    <button className="listButton">{checkmarkVisible(task.status)}</button>
+                    <button
+                    onClick={() => toggleTaskDone(task.id)} 
+                    className="listButton">{checkmarkVisible(task.status)}</button>
                     <span className={`content ${checkIfLineThrough(task.status)}`}>{task.content}</span>
                     <button
                         onClick={() => removeTasks(task.id)}
