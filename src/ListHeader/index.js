@@ -1,14 +1,9 @@
 import "./style.css";
 
 
-const ListHeader = ({ tasks, toggleHideDone, hideDone }) => {
+const ListHeader = ({ tasks, toggleHideDone, hideDone, toggleAllDone }) => {
     const headerButtonVisibility = (tasksTable) => tasksTable.length !== 0 ? "" : "task__hidden";
-    const textSwap = (hideDone) => hideDone ? "Pokaż ukryte" : "Ukryj ukończone";
-    const everyTaskFinished = (tasksTable) => {
-        const checkIfAllDone = ({ status }) => status === "done";
-        return tasksTable.every(checkIfAllDone) ? true : false;
-    };
-
+    const everyTaskFinished = (tasksTable) => tasksTable.every(({ status }) => status === "done");
 
     return (<div className="header__container">
         <span className="header__span">Lista zadań</span>
@@ -19,6 +14,7 @@ const ListHeader = ({ tasks, toggleHideDone, hideDone }) => {
         </button>
         <button
             className={`header__button ${headerButtonVisibility(tasks)}`}
+            onClick={toggleAllDone}
             disabled={everyTaskFinished(tasks)}
         >Ukończ wszystkie
         </button>

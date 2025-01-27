@@ -4,16 +4,34 @@ import ListHeader from "./ListHeader";
 import Section from "./Section";
 import MainHeader from "./MainHeader";
 import Container from "./Container";
-import tasksTable from "./data/exampleTasks";
+//import tasksTable from "./data/exampleTasks";
 import { useState } from "react";
 
 
 function App() {
 
   const [hideDone, setHideDone] = useState(false);
+  const [tasksTable, setTasks] = useState([
+    { id: 1, content: "przejść na Reacta", status: "toDo" },
+    { id: 2, content: "zjeść obiad", status: "done" },
+    { id: 3, content: "zrobić kolacje", status: "done" },
+  ]);
+
+
+  const toggleAllDone = () => {
+
+    // const setTasks = (tasksTable => tasksTable.map({
+    //   ...tableElement,
+    //   status: "done"
+    // }));
+  };
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
+  };
+
+  const removeTasks = (id) => {
+    setTasks((tasksTable) => tasksTable.filter((elementOfTable) => elementOfTable.id !== id));
   };
 
   return (
@@ -26,8 +44,8 @@ function App() {
         sectionContent={<Form />}
       />
       <Section
-        headerContent={<ListHeader tasks={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} />}
-        sectionContent={<Tasks tasks={tasksTable} toggleHideDone={toggleHideDone} />}
+        headerContent={<ListHeader tasks={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} toggleAllDone={toggleAllDone} />}
+        sectionContent={<Tasks tasks={tasksTable} hideDone={hideDone} removeTasks={removeTasks} />}
       />
     </Container>
   );
