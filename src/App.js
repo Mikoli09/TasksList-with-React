@@ -4,19 +4,13 @@ import ListHeader from "./ListHeader";
 import Section from "./Section";
 import MainHeader from "./MainHeader";
 import Container from "./Container";
-//import tasksTable from "./data/exampleTasks";
 import { useState } from "react";
 
 
 function App() {
 
   const [hideDone, setHideDone] = useState(false);
-  const [tasksTable, setTasks] = useState([
-    { id: 1, content: "przejść na Reacta", status: "toDo" },
-    { id: 2, content: "zjeść obiad", status: "done" },
-    { id: 3, content: "zrobić kolacje", status: "done" },
-  ]);
-
+  const [tasksTable, setTasks] = useState([]);
 
   const setAllDone = () => {
     setTasks(tasksTable =>
@@ -53,8 +47,6 @@ function App() {
       }
     ])
   };
-
-
 
 return (
   <Container>
