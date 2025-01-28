@@ -18,47 +18,47 @@ function App() {
   ]);
 
 
-  const toggleAllDone = () => {
+  const setAllDone = () => {
+    setTasks(tasksTable =>
+      tasksTable.map((tableElement) => ({
+      ...tableElement,
+        status: "done"
+    })));
+};
 
-    // const setTasks = (tasksTable => tasksTable.map({
-    //   ...tableElement,
-    //   status: "done"
-    // }));
-  };
+const toggleHideDone = () => {
+  setHideDone(hideDone => !hideDone);
+};
 
-  const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone);
-  };
+const removeTasks = (id) => {
+  setTasks((tasksTable) => tasksTable.filter((elementOfTable) => elementOfTable.id !== id));
+};
 
-  const removeTasks = (id) => {
-    setTasks((tasksTable) => tasksTable.filter((elementOfTable) => elementOfTable.id !== id));
-  };
-
-  const toggleTaskDone = (id) => {
-    setTasks((tasksTable) => tasksTable.map((task) => {
-      if (task.id === id) {
-        return { ...task, status: task.status === "toDo" ? "done":"toDo"}
-      }
-      return task;
-    }))
-  };
+const toggleTaskDone = (id) => {
+  setTasks((tasksTable) => tasksTable.map((task) => {
+    if (task.id === id) {
+      return { ...task, status: task.status === "toDo" ? "done" : "toDo" }
+    }
+    return task;
+  }))
+};
 
 
-  return (
-    <Container>
-      <MainHeader
-        title={"Lista zadań"}
-      />
-      <Section
-        headerContent={"Dodaj nowe zadanie"}
-        sectionContent={<Form />}
-      />
-      <Section
-        headerContent={<ListHeader tasksTable={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} toggleAllDone={toggleAllDone} />}
-        sectionContent={<Tasks tasksTable={tasksTable} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
-      />
-    </Container>
-  );
+return (
+  <Container>
+    <MainHeader
+      title={"Lista zadań"}
+    />
+    <Section
+      headerContent={"Dodaj nowe zadanie"}
+      sectionContent={<Form />}
+    />
+    <Section
+      headerContent={<ListHeader tasksTable={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} setAllDone={setAllDone} />}
+      sectionContent={<Tasks tasksTable={tasksTable} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
+    />
+  </Container>
+);
 }
 
 export default App;

@@ -1,7 +1,7 @@
 import "./style.css";
 
 
-const ListHeader = ({ tasksTable, toggleHideDone, hideDone, toggleAllDone }) => {
+const ListHeader = ({ tasksTable, toggleHideDone, hideDone, setAllDone }) => {
     const headerButtonVisibility = (tasksTable) => tasksTable.length !== 0 ? "" : "task__hidden";
     const everyTaskFinished = (tasksTable) => tasksTable.every(({ status }) => status === "done");
 
@@ -14,7 +14,7 @@ const ListHeader = ({ tasksTable, toggleHideDone, hideDone, toggleAllDone }) => 
         </button>
         <button
             className={`header__button ${headerButtonVisibility(tasksTable)}`}
-            onClick={toggleAllDone}
+            onClick={setAllDone}
             disabled={everyTaskFinished(tasksTable)}
         >Ukończ wszystkie
         </button>
