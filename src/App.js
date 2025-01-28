@@ -21,27 +21,39 @@ function App() {
   const setAllDone = () => {
     setTasks(tasksTable =>
       tasksTable.map((tableElement) => ({
-      ...tableElement,
+        ...tableElement,
         status: "done"
-    })));
-};
+      })));
+  };
 
-const toggleHideDone = () => {
-  setHideDone(hideDone => !hideDone);
-};
+  const toggleHideDone = () => {
+    setHideDone(hideDone => !hideDone);
+  };
 
-const removeTasks = (id) => {
-  setTasks((tasksTable) => tasksTable.filter((elementOfTable) => elementOfTable.id !== id));
-};
+  const removeTasks = (id) => {
+    setTasks((tasksTable) => tasksTable.filter((elementOfTable) => elementOfTable.id !== id));
+  };
 
-const toggleTaskDone = (id) => {
-  setTasks((tasksTable) => tasksTable.map((task) => {
-    if (task.id === id) {
-      return { ...task, status: task.status === "toDo" ? "done" : "toDo" }
-    }
-    return task;
-  }))
-};
+  const toggleTaskDone = (id) => {
+    setTasks((tasksTable) => tasksTable.map((task) => {
+      if (task.id === id) {
+        return { ...task, status: task.status === "toDo" ? "done" : "toDo" }
+      }
+      return task;
+    }))
+  };
+
+  const addNewTask = (newTaskContent) => {
+    setTasks((tasksTable) => [
+      ...tasksTable,
+      {
+        content: newTaskContent,
+        status: "toDo",
+        id: tasksTable.length === 0 ? 1 : tasksTable[tasksTable.length - 1].id + 1
+      }
+    ])
+  };
+
 
 
 return (
@@ -51,7 +63,7 @@ return (
     />
     <Section
       headerContent={"Dodaj nowe zadanie"}
-      sectionContent={<Form />}
+      sectionContent={<Form addNewTask={addNewTask} />}
     />
     <Section
       headerContent={<ListHeader tasksTable={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} setAllDone={setAllDone} />}
