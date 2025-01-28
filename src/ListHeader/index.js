@@ -10,7 +10,7 @@ const ListHeader = ({ tasks, toggleHideDone, hideDone, toggleAllDone }) => {
         <button
             className={`header__button ${headerButtonVisibility(tasks)}`}
             onClick={toggleHideDone}
-        >{hideDone ? "Pokaż ukryte" : "Ukryj ukończone"}
+        >{hideDone ? "Pokaż ukończone" : "Ukryj ukończone"}
         </button>
         <button
             className={`header__button ${headerButtonVisibility(tasks)}`}
