@@ -41,7 +41,6 @@ function App() {
       }
       return task;
     }))
-
   };
 
 
@@ -55,8 +54,8 @@ function App() {
         sectionContent={<Form />}
       />
       <Section
-        headerContent={<ListHeader tasks={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} toggleAllDone={toggleAllDone} />}
-        sectionContent={<Tasks tasks={tasksTable} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
+        headerContent={<ListHeader tasksTable={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} toggleAllDone={toggleAllDone} />}
+        sectionContent={<Tasks tasksTable={tasksTable} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
       />
     </Container>
   );
