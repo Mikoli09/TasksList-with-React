@@ -1,7 +1,7 @@
 # Tasks list
 
 ## Demo:
-Check my demo [here](https://mikoli09.github.io/todos-list-react/)
+Check my demo [here](https://mikoli09.github.io/TasksList-with-React/)
 
 
 ## Description:
