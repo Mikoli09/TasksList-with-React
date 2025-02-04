@@ -48,21 +48,21 @@ function App() {
     ])
   };
 
-return (
-  <Container>
-    <MainHeader
-      title={"Lista zadań"}
-    />
-    <Section
-      headerContent={"Dodaj nowe zadanie"}
-      sectionContent={<Form addNewTask={addNewTask} />}
-    />
-    <Section
-      headerContent={<ListHeader tasksTable={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} setAllDone={setAllDone} />}
-      sectionContent={<Tasks tasksTable={tasksTable} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
-    />
-  </Container>
-);
+  return (
+    <Container>
+      <MainHeader
+        title={"Lista zadań"}
+      />
+      <Section
+        headerContent={"Dodaj nowe zadanie"}
+        sectionContent={<Form addNewTask={addNewTask} />}
+      />
+      <Section
+        headerContent={<ListHeader tasksTable={tasksTable} toggleHideDone={toggleHideDone} hideDone={hideDone} setAllDone={setAllDone} />}
+        sectionContent={<Tasks tasksTable={tasksTable} hideDone={hideDone} removeTasks={removeTasks} toggleTaskDone={toggleTaskDone} />}
+      />
+    </Container>
+  );
 }
 
 export default App;

@@ -1,7 +1,7 @@
 .section__container {
     padding: 10px;
-  }
-  
+}
+
 .tasks {
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@
     transition: 0.5s;
 }
 
-.listButton--remove{
+.listButton--remove {
     background-color: red;
 }
 
@@ -52,7 +52,7 @@
     background-color: hsl(120, 100%, 30%);
 }
 
-.listButton--remove:hover{
+.listButton--remove:hover {
     background-color: hsl(0, 100%, 70%);
 }
 
