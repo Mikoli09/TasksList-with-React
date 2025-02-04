@@ -6,7 +6,11 @@ const Form = ({ addNewTask }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        newTaskContent.trim() !== "" ? addNewTask(newTaskContent.trim()) : document.querySelector(".form__task").focus();
+        if (newTaskContent.trim() === "") {
+            document.querySelector(".form__task").focus();
+            return;
+        }
+        addNewTask(newTaskContent.trim())
         setNewTaskContent("");
     };
 
