@@ -6,7 +6,7 @@ const Form = ({ addNewTask }) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        addNewTask(newTaskContent.trim());
+        newTaskContent.trim() !== "" ? addNewTask(newTaskContent.trim()) : document.querySelector(".form__task").focus();
         setNewTaskContent("");
     };
 
@@ -18,6 +18,7 @@ const Form = ({ addNewTask }) => {
                 value={newTaskContent}
                 className="form__task"
                 placeholder="Co jest do zrobienia?"
+                required
                 onChange={(event) => setNewTaskContent(event.target.value)}
             />
             <button className="form__insertTaskButton">Dodaj zadanie</button>
