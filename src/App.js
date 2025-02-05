@@ -4,13 +4,25 @@ import ListHeader from "./ListHeader";
 import Section from "./Section";
 import MainHeader from "./MainHeader";
 import Container from "./Container";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 
 function App() {
 
+  const getStoredTasks = () => {
+    const storedTasks = localStorage.getItem("localStorageTasksTable");
+
+    return (
+      storedTasks ? JSON.parse(storedTasks) : []
+    )
+  };
+
   const [hideDone, setHideDone] = useState(false);
-  const [tasksTable, setTasks] = useState([]);
+  const [tasksTable, setTasks] = useState(getStoredTasks);
+
+  useEffect(() => {
+    localStorage.setItem("localStorageTasksTable", JSON.stringify(tasksTable));
+
+  }, [tasksTable]);
 
   const setAllDone = () => {
     setTasks(tasksTable =>
