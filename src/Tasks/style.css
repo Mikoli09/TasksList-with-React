@@ -34,6 +34,9 @@
 }
 
 .listButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: green;
     width: 25px;
     height: 25px;
