@@ -1,25 +1,25 @@
-import "./style.css";
+import { HeaderContainer, HeaderSpan, HeaderButton } from "./styled";
+
 
 const ListHeader = ({ tasksTable, toggleHideDone, hideDone, setAllDone }) => {
-    const headerButtonVisibility = (tasksTable) => tasksTable.length !== 0 ? "" : "task__hidden";
-    const everyTaskFinished = (tasksTable) => tasksTable.every(({ status }) => status === "done");
 
     return (
-        <div className="header__container">
-            <span className="header__span">Lista zadań</span>
-            <button
-                className={`header__button ${headerButtonVisibility(tasksTable)}`}
+        <HeaderContainer>
+            <HeaderSpan>Lista zadań</HeaderSpan>
+            <HeaderButton
+                $notVisible={tasksTable.length === 0}
                 onClick={toggleHideDone}
             >
                 {hideDone ? "Pokaż" : "Ukryj"} ukończone
-            </button>
-            <button
-                className={`header__button ${headerButtonVisibility(tasksTable)}`}
+            </HeaderButton>
+            <HeaderButton
+                $notVisible={tasksTable.length === 0}
+                disabled={tasksTable.every(({ status }) => status === "done")}
                 onClick={setAllDone}
-                disabled={everyTaskFinished(tasksTable)}
             >Ukończ wszystkie
-            </button>
-        </div>
+            </HeaderButton>
+        </HeaderContainer>
     );
 }
+
 export default ListHeader

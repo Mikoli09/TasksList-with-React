@@ -1,11 +1,11 @@
-import "./style.css";
+import { SectionStyled, Header } from "./styled";
+
 
 const Section = ({ headerContent, sectionContent }) => (
-
-    <section className="section">
-        <header className="section__header">{headerContent}</header>
+    <SectionStyled>
+        <Header>{headerContent}</Header>
         {sectionContent}
-    </section>
+    </SectionStyled>
 );
 
 export default Section;

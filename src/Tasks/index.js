@@ -1,38 +1,35 @@
-import "./style.css"
+import { Container, List, Task, Button, Content } from "./styled";
+
 
 const Tasks = ({ tasksTable, hideDone, removeTasks, toggleTaskDone }) => {
-    const checkIfHide = (elementStatus, variableStatus) => {
-        if (!variableStatus) {
-            return "";
-        }
-        return elementStatus === "done" ? " task__hidden" : ""
-    };
-
-    const checkmarkVisible = elementStatus => elementStatus === "done" ? "✔" : "";
-    const checkIfLineThrough = elementStatus => elementStatus === "done" ? "content__done" : "";
 
     return (
-        <div className="section__container">
-            <ul className="tasks">
+        <Container>
+            <List>
                 {tasksTable.map(task => (
-                    <li
-                        key={task.id}
-                        className={`task${checkIfHide(task.status, hideDone)}`}>
-                        <button
+                    <Task
+                        hide={hideDone ? (task.status === "done") : false}
+                        key={task.id}>
+                        <Button
                             onClick={() => toggleTaskDone(task.id)}
-                            className="listButton">{checkmarkVisible(task.status)}</button>
-                        <span className={`content ${checkIfLineThrough(task.status)}`}
+                            checkmark={task.status === "done"}
+                        >
+                        </Button>
+                        <Content
+                            lineThrough={task.status === "done"}
                         >
                             {task.content}
-                        </span>
-                        <button
+                        </Content>
+                        <Button
                             onClick={() => removeTasks(task.id)}
-                            className="listButton listButton--remove">🗑
-                        </button>
-                    </li>
+                            remove
+                        >
+                        </Button>
+                    </Task>
                 ))}
-            </ul>
-        </div>)
+            </List>
+        </Container>
+    )
 };
 
 export default Tasks;

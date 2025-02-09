@@ -1,10 +1,18 @@
-.form {
+import styled from "styled-components";
+
+
+export const StyledForm = styled.form`
     display: flex;
     gap: 10px;
     padding: 15px;
-}
 
-.form__task {
+    @media (max-width: 767px) {
+        flex-direction: column;
+        flex-wrap: wrap;
+}
+`;
+
+export const Task = styled.input`
     padding: 10px;
     overflow-x: scroll;
     max-width: 100%;
@@ -12,9 +20,9 @@
     border-color: #EEEEEE;
     border-width: 2px;
     flex-grow: 1;
-}
+`;
 
-.form__insertTaskButton {
+export const InsertTaskButton = styled.button`
     background-color: teal;
     font-size: 18px;
     color: white;
@@ -22,9 +30,9 @@
     padding: 10px;
     cursor: pointer;
     transition: 0.5s;
-}
 
-.form__insertTaskButton:hover {
-    background-color: hsl(180, 100%, 30%);
-    transform: scale(1.02);
+    &:hover {
+        background-color: hsl(180, 100 %, 30 %);
+        transform: scale(1.02);
 }
+`;
