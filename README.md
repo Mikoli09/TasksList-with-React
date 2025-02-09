@@ -11,7 +11,7 @@ If you want to hide done tasks or finish all of them then use buttons on the rig
 
 Enjoy and keep your tasks organized.  
 
-![taskslistGIF](./src/assets/tasksList.gif)
+![taskslistGIF](./assets/tasksList.gif)
 
 ## Technologies used
 - **HTML** - Provides website structure,
