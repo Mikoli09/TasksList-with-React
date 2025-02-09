@@ -1,6 +1,5 @@
 import { HeaderContainer, HeaderSpan, HeaderButton } from "./styled";
 
-
 const ListHeader = ({ tasksTable, toggleHideDone, hideDone, setAllDone }) => {
 
     return (

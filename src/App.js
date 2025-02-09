@@ -1,12 +1,11 @@
-import Form from "./Form";
-import Tasks from "./Tasks";
-import ListHeader from "./ListHeader";
+import Form from "./Section/Form";
+import Tasks from "./Section/Tasks";
+import ListHeader from "./Section/ListHeader";
 import Section from "./Section";
 import MainHeader from "./MainHeader";
 import Container from "./Container";
 import { useState } from "react";
 import { useTasks } from "./useTasks";
-
 
 function App() {
   const [hideDone, setHideDone] = useState(false);

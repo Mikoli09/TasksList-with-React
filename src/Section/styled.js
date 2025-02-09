@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const SectionStyled = styled.section`
   background-color: white;
   margin: 20px 10px;

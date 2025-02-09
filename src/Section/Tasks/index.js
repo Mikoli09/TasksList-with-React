@@ -1,6 +1,5 @@
 import { Container, List, Task, Button, Content } from "./styled";
 
-
 const Tasks = ({ tasksTable, hideDone, removeTasks, toggleTaskDone }) => {
 
     return (

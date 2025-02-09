@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 export const useTasks = () => {
     const getStoredTasks = () => {
         const storedTasks = localStorage.getItem("localStorageTasksTable");
