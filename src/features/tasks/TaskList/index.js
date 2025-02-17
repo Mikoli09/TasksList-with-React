@@ -1,6 +1,6 @@
 import { Container, List, Task, Button, Content } from "./styled";
 
-const Tasks = ({ tasksTable, hideDone, removeTasks, toggleTaskDone }) => {
+const TaskList = ({ tasksTable, hideDone, removeTasks, toggleTaskDone }) => {
 
     return (
         <Container>
@@ -31,4 +31,4 @@ const Tasks = ({ tasksTable, hideDone, removeTasks, toggleTaskDone }) => {
     )
 };
 
-export default Tasks;
+export default TaskList;
