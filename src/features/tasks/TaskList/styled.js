@@ -19,7 +19,7 @@ export const Task = styled.li`
     border-bottom: 2px solid;
     border-color: #EEEEEE;
 
-    ${({ hide }) => hide && css`
+    ${({ $hide }) => $hide && css`
         display: none;
     `}
 `;
@@ -47,13 +47,13 @@ export const Button = styled.button`
         border-width: 1px;
     }
 
-    ${({ checkmark }) => checkmark && css`
+    ${({ $checkmark }) => $checkmark && css`
         &::before {
             content: "✔";
         }
-        `}
+    `}
 
-    ${({ remove }) => remove && css`
+    ${({ $remove }) => $remove && css`
         background-color: red;
 
         &::before {
@@ -63,7 +63,7 @@ export const Button = styled.button`
          &:hover {
              background-color: hsl(0, 100%, 70%);
         }
-        `}
+    `}
 `;
 
 export const Content = styled.span`
@@ -72,7 +72,7 @@ export const Content = styled.span`
     margin: 10px 10px;
     flex-grow: 1;
 
-    ${({ lineThrough }) => lineThrough && css`
+    ${({ $lineThrough }) => $lineThrough && css`
         text-decoration: line-through;
- `}
+    `}
 `;

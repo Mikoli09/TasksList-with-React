@@ -8,7 +8,7 @@ export const StyledForm = styled.form`
     @media (max-width: 767px) {
         flex-direction: column;
         flex-wrap: wrap;
-}
+    }
 `;
 
 export const Task = styled.input`
@@ -33,5 +33,5 @@ export const InsertTaskButton = styled.button`
     &:hover {
         background-color: hsl(180, 100 %, 30 %);
         transform: scale(1.02);
-}
+    }
 `;

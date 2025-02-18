@@ -24,7 +24,7 @@ export const HeaderButton = styled.button`
     background-color: white;
     transition: 0.5s;
 
-    ${({notVisible}) => notVisible && css`
+    ${({$notVisible}) => $notVisible && css`
         display: none;
     `}
 

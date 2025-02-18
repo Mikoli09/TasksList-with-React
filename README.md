@@ -20,8 +20,9 @@ Enjoy and keep your tasks organized.
 - **React** - JavaScript library for building user interfaces with components.
 - **Create React App** - A tool that sets up a React project with everything you need to start.
 - **Webpack** - Bundles JavaScript, CSS, and assets for optimized performance.  
-- **Custom hooks** - Manages state and reusable logic, making the code cleaner and easier to maintain.
-  
+- **Custom hooks** - Manages state and reusable logic, making the code cleaner and easier to maintain.  
+- **Redux** - State management library for managing and centralizing application state.
+
 
 ## Available Scripts
 

@@ -1,20 +1,24 @@
+import { useDispatch, useSelector } from "react-redux";
 import { HeaderContainer, HeaderSpan, HeaderButton } from "./styled";
+import { selectTasks, toggleHideDone, setAllDone } from "../tasksSlice";
 
-const ListHeader = ({ tasksTable, toggleHideDone, hideDone, setAllDone }) => {
+const ListHeader = () => {
+    const { tasksTable, hideDone } = useSelector(selectTasks);
+    const dispatch = useDispatch();
 
     return (
         <HeaderContainer>
             <HeaderSpan>Lista zadań</HeaderSpan>
             <HeaderButton
                 $notVisible={tasksTable.length === 0}
-                onClick={toggleHideDone}
+                onClick={() => dispatch(toggleHideDone())}
             >
                 {hideDone ? "Pokaż" : "Ukryj"} ukończone
             </HeaderButton>
             <HeaderButton
                 $notVisible={tasksTable.length === 0}
                 disabled={tasksTable.every(({ status }) => status === "done")}
-                onClick={setAllDone}
+                onClick={() => dispatch(setAllDone())}
             >Ukończ wszystkie
             </HeaderButton>
         </HeaderContainer>
