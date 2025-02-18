@@ -1,17 +1,28 @@
 # Tasks list
 
+Welcome to the **Tasks list Manager** app, where you can easily manage your tasks and stay organized! 🚀
+
+### Features:
+- **Add Tasks**: Quickly create new tasks with just a few clicks.
+- **Task Progress**: Mark tasks as completed or revert them to active with a simple click.
+- **Hide Completed Tasks**: Toggle the visibility of completed tasks to keep your list clean and focused.
+- **Delete Tasks**: Remove tasks that are no longer needed with a simple delete option.
+- **Finish All Tasks**: Mark all tasks as completed at once using a convenient button.
+
+### How to Use:
+1. Add tasks to your list with the input form.
+2. Click the checkbox to toggle task completion status.
+3. Hide completed tasks for a more organized view, or mark all tasks as completed with a single click.
+4. Easily delete tasks when they are no longer needed.
+
+### Stay organized and keep track of your tasks with ease. Enjoy! 😎  
+
+![taskslistGIF](./assets/tasksList.gif)
+
+
 ## Demo:
 Check my demo [here](https://mikoli09.github.io/TasksList-with-React/)
 
-
-## Description:
-You may find here a simple task manager.  
-You can add new positions, change status and delete tasks.  
-If you want to hide done tasks or finish all of them then use buttons on the right side.  
-
-Enjoy and keep your tasks organized.  
-
-![taskslistGIF](./assets/tasksList.gif)
 
 ## Technologies used
 - **HTML** - Provides website structure,
