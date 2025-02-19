@@ -7,17 +7,17 @@ const tasksSlice = createSlice({
         hideDone: false,
     },
     reducers: {
-        addNewTask: ({ tasksTable }, { payload }) => {
-            tasksTable.push(payload);
+        addNewTask: ({ tasksTable }, { payload: newTask }) => {
+            tasksTable.push(newTask);
         },
         toggleHideDone: (state) => {
             state.hideDone = !state.hideDone;
         },
-        removeTasks: ({ tasksTable }, { payload }) => {
-            tasksTable.splice(payload, 1);
+        removeTask: ({ tasksTable }, { payload: taskIndex }) => {
+            tasksTable.splice(taskIndex, 1);
         },
-        toggleTaskDone: ({ tasksTable }, { payload }) => {
-            const task = tasksTable[payload];
+        toggleTaskDone: ({ tasksTable }, { payload: taskIndex }) => {
+            const task = tasksTable[taskIndex];
             task.status = task.status === "toDo" ? "done" : "toDo";
         },
         setAllDone: ({ tasksTable }) => {
@@ -26,7 +26,9 @@ const tasksSlice = createSlice({
     }
 });
 
-export const { addNewTask, toggleHideDone, removeTasks, toggleTaskDone, setAllDone } = tasksSlice.actions;
-export const selectTasks = state => state.tasks;
+export const { addNewTask, toggleHideDone, removeTask, toggleTaskDone, setAllDone } = tasksSlice.actions;
+export const selectTasksState = ({tasks}) => tasks;
+export const selectAllTasksDone = ({tasks: {tasksTable} }) => tasksTable.every(task => task.status ==="done");
+export const selectTasksTableEmpty = ({tasks: {tasksTable}}) => tasksTable.length === 0;
 export default tasksSlice.reducer;
 

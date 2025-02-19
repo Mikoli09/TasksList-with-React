@@ -8,7 +8,6 @@ const Form = () => {
     const [newTaskContent, setNewTaskContent] = useState("");
     const inputRef = useRef(null);
     const newTaskContentTrimmed = newTaskContent.trim();
-
     const dispatch = useDispatch();
 
     const setFocusOnInput = () => {
@@ -21,11 +20,13 @@ const Form = () => {
             setFocusOnInput();
             return;
         }
-        dispatch(addNewTask({
-            content: newTaskContentTrimmed,
-            status: "toDo",
-            id: nanoid(),
-        }));
+        dispatch(addNewTask(
+            {
+                content: newTaskContentTrimmed,
+                status: "toDo",
+                id: nanoid(),
+            }
+        ));
         setNewTaskContent("");
         setFocusOnInput();
     };
