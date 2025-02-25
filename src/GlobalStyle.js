@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
+
 
 export const GlobalStyle = createGlobalStyle`
 html {
@@ -14,4 +16,11 @@ body {
   background-color: #EEEEEE;
   padding: 5px;
   }
+`;
+
+export const MainContainer = styled.main`
+  max-width: 900px;
+  min-width: 200px;
+  padding: 20px 10px;
+  margin: 10px auto;
 `;

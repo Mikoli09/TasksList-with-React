@@ -2,14 +2,14 @@ import Form from "./Form";
 import TaskList from "./TaskList";
 import ListHeader from "./ListHeader";
 import Section from "../../common/Section";
-import MainHeader from "../../common/MainHeader";
-import Container from "../../common/Container";
+import { MainContainer } from "../../GlobalStyle";
+import { MainHeader } from "../../common/MainHeader/styled";
 
 const Tasks = () => (
-  <Container>
-    <MainHeader
-      title={"Lista zadań"}
-    />
+  <MainContainer>
+    <MainHeader>
+      Lista zadań
+    </MainHeader>
     <Section
       headerContent={"Dodaj nowe zadanie"}
       sectionContent={<Form />}
@@ -18,7 +18,7 @@ const Tasks = () => (
       headerContent={<ListHeader />}
       sectionContent={<TaskList />}
     />
-  </Container>
+  </MainContainer>
 );
 
 export default Tasks;
