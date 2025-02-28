@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { HeaderContainer, HeaderSpan, HeaderButton } from "./styled";
-import { selectTasksState, toggleHideDone, setAllDone, selectAllTasksDone, selectTasksTableEmpty } from "../tasksSlice";
+import { selectTasksState, toggleHideDone, setAllDone, selectAllTasksDone, selectTasksTableEmpty, fetchExampleTasks } from "../../tasksSlice";
 
 const ListHeader = () => {
     const { hideDone } = useSelector(selectTasksState);
@@ -11,6 +11,11 @@ const ListHeader = () => {
     return (
         <HeaderContainer>
             <HeaderSpan>Lista zadań</HeaderSpan>
+            <HeaderButton
+                onClick={() => dispatch(fetchExampleTasks())}
+            >
+                Pobierz przykładowe zadania
+            </HeaderButton>
             <HeaderButton
                 $notVisible={tasksTableEmpty}
                 onClick={() => dispatch(toggleHideDone())}

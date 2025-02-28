@@ -11,16 +11,6 @@ export const StyledForm = styled.form`
     }
 `;
 
-export const Task = styled.input`
-    padding: 10px;
-    overflow-x: scroll;
-    max-width: 100%;
-    border-style: solid;
-    border-color: #EEEEEE;
-    border-width: 2px;
-    flex-grow: 1;
-`;
-
 export const InsertTaskButton = styled.button`
     background-color: teal;
     font-size: 18px;
@@ -31,7 +21,7 @@ export const InsertTaskButton = styled.button`
     transition: 0.5s;
 
     &:hover {
-        background-color: hsl(180, 100 %, 30 %);
+        background-color: hsl(180, 100%, 30%);
         transform: scale(1.02);
     }
 `;
