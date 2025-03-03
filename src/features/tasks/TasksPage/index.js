@@ -1,10 +1,11 @@
-import Form from "../TasksPage/Form/index";
-import TaskList from "../TasksPage/TaskList/index";
-import ListHeader from "../TasksPage/ListHeader/index";
+import Form from "./Form/index";
+import TasksList from "./TasksList/index";
+import TasksListHeader from "./TasksList/TasksListHeader";
 import Section from "../../../common/Section";
 import { MainContainer } from "../../../GlobalStyle";
 import { MainHeader } from "../../../common/MainHeader/styled";
 import Search from "./Search";
+import { FormHeader } from "./Form/FormHeader";
 
 const TasksPage = () => {
 
@@ -14,7 +15,7 @@ const TasksPage = () => {
         Lista zadań
       </MainHeader>
       <Section
-        headerContent={"Dodaj nowe zadanie"}
+        headerContent={<FormHeader />}
         sectionContent={<Form />}
       />
       <Section
@@ -22,8 +23,8 @@ const TasksPage = () => {
         sectionContent={<Search />}
       />
       <Section
-        headerContent={<ListHeader />}
-        sectionContent={<TaskList />}
+        headerContent={<TasksListHeader />}
+        sectionContent={<TasksList />}
       />
     </MainContainer>
   )

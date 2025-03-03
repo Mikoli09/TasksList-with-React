@@ -1,13 +1,13 @@
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom/cjs/react-router-dom";
 import TasksPage from "./features/tasks/TasksPage"
 import AuthorPage from "./features/author/AuthorPage";
-import TaskPage from "../src/features/tasks/taskPage/index";
-import { StyledNavLink } from "./styled";
+import TaskPage from "./features/tasks/TaskPage/index";
+import { List, StyledNav, StyledNavLink } from "./styled";
 
 export default () => (
     <HashRouter>
-        <nav>
-            <ul>
+        <StyledNav>
+            <List>
                 <li>
                     <StyledNavLink to="/zadania">
                         Zadania
@@ -18,8 +18,8 @@ export default () => (
                         Autor
                     </StyledNavLink>
                 </li>
-            </ul>
-        </nav>
+            </List>
+        </StyledNav>
         <Switch>
             <Route path="/zadania/:id">
                 <TaskPage />

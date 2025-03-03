@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectTasksState, removeTask, toggleTaskDone, selectTasksByQuery } from "../../tasksSlice";
 import { Link, useLocation } from "react-router-dom/cjs/react-router-dom";
 
-const TaskList = () => {
+const TasksList = () => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const query = searchParams.get("szukaj");
@@ -20,7 +20,6 @@ const TaskList = () => {
                 {tasksTable.map((task, taskIndex) => (
                     <Task
                         $hide={hideDone ? (isTaskDone(taskIndex)) : false}
-
                         key={task.id}>
                         <Button
                             onClick={() => dispatch(toggleTaskDone(taskIndex))}
@@ -44,4 +43,4 @@ const TaskList = () => {
     )
 };
 
-export default TaskList;
+export default TasksList;

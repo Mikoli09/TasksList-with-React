@@ -1,5 +1,5 @@
 import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom";
-import { Input } from "../../Input";
+import { Input } from "../../common/Input";
 import { InputContainer } from "./styled";
 import { nanoid } from "@reduxjs/toolkit";
 import searchQueryParamName from "../searchQueryParamName";

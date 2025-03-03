@@ -14,7 +14,7 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #EEEEEE;
-  padding: 5px;
+  /* padding: 5px; */
   }
 `;
 
