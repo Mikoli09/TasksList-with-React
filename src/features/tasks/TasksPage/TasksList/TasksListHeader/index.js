@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { HeaderContainer, HeaderSpan, HeaderButton } from "./styled";
+import { HeaderContainer, HeaderSpan } from "./styled";
 import { selectTasksState, toggleHideDone, setAllDone, selectAllTasksDone, selectTasksTableEmpty} from "../../../tasksSlice";
+import { HeaderButton } from "../../../../../common/HeaderButton/styled";
 
 const TasksListHeader = () => {
     const { hideDone } = useSelector(selectTasksState);

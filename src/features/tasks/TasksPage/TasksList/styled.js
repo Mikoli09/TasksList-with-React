@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 export const Container = styled.div`
     padding: 10px;
@@ -39,6 +40,7 @@ export const Button = styled.button`
 
     &:hover {
         background-color: hsl(120, 100%, 30%);
+        transform: scale(1.02);
     }
 
     &:active {
@@ -71,8 +73,18 @@ export const Content = styled.span`
     word-break: break-word;
     margin: 10px 10px;
     flex-grow: 1;
+`;
 
-    ${({ $lineThrough }) => $lineThrough && css`
-        text-decoration: line-through;
-    `}
+export const TaskLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    transition: 0.5s;
+
+        &:hover{
+            transform: scale(1.02);
+        }
+        ${({ $lineThrough }) => $lineThrough && css`
+            text-decoration: line-through;
+        `}
 `;
