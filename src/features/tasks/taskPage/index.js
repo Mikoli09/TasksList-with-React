@@ -4,22 +4,35 @@ import { MainHeader } from "../../../common/MainHeader/styled";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import { useSelector } from "react-redux";
 import { selectTaskById } from "../tasksSlice";
+import { TaskPageParagraph } from "./styled";
+import { TaskPageHeader } from "./TaskPageHeader";
 
 const TaskPage = () => {
     const params = useParams();
     const task = useSelector((state) => selectTaskById(state, params.id));
 
-    return (
-        <MainContainer>
-            <MainHeader>
-                Szczegóły zadania
-            </MainHeader>
-            <Section
-                headerContent={task ? task.content : "Nie zanaleziono zadania"}
-                sectionContent={<>TEKST - moze byc informacja ze ukonczono albo cos takiego</>}
-            />
-        </MainContainer>
-    )
+    const paragraphContent = (task) => {
+
+        return (
+            task ? `Ukończone: ${task.status === "done" ? "TAK" : "NIE"}` : "😒" 
+        )
+    };
+
+return (
+    <MainContainer>
+        <MainHeader>
+            Szczegóły zadania
+        </MainHeader>
+        <Section
+            headerContent={
+                <TaskPageHeader task={task || undefined} />
+            }
+            sectionContent={
+                <TaskPageParagraph>{paragraphContent(task)}</TaskPageParagraph>
+            }
+        />
+    </MainContainer>
+)
 };
 
 export default TaskPage;
