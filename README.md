@@ -8,12 +8,16 @@ Welcome to the **Tasks list Manager** app, where you can easily manage your task
 - **Hide Completed Tasks**: Toggle the visibility of completed tasks to keep your list clean and focused.
 - **Delete Tasks**: Remove tasks that are no longer needed with a simple delete option.
 - **Finish All Tasks**: Mark all tasks as completed at once using a convenient button.
+- **Search Tasks**: Easily search through tasks using the built-in search feature to find specific tasks quickly.
+- **View Task Details**: Click on a task to view detailed information and get more context about the task.
 
 ### How to Use:
 1. Add tasks to your list with the input form.
 2. Click the checkbox to toggle task completion status.
 3. Hide completed tasks for a more organized view, or mark all tasks as completed with a single click.
 4. Easily delete tasks when they are no longer needed.
+5. Use the search bar to filter and find tasks quickly.
+6. Click on any task to view its details and additional information.
 
 ### Stay organized and keep track of your tasks with ease. Enjoy! 😎  
 
@@ -32,8 +36,10 @@ Check my demo [here](https://mikoli09.github.io/TasksList-with-React/)
 - **Create React App** - A tool that sets up a React project with everything you need to start.
 - **Webpack** - Bundles JavaScript, CSS, and assets for optimized performance.  
 - **Custom hooks** - Manages state and reusable logic, making the code cleaner and easier to maintain.  
-- **Redux** - State management library for managing and centralizing application state.
-
+- **Redux** - Middleware used for handling side effects in Redux, allowing for asynchronous actions and logic.
+- **Redux-Saga** - Middleware used for handling side effects in Redux, allowing for asynchronous actions and logic.
+- **React Router** - A library for handling routing in React, enabling navigation between different views and components.
+- **React-Toastify** - Library for showing non-intrusive toast notifications to the user.
 
 ## Available Scripts
 
