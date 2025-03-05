@@ -14,13 +14,5 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #EEEEEE;
-  /* padding: 5px; */
   }
-`;
-
-export const MainContainer = styled.main`
-  max-width: 900px;
-  min-width: 200px;
-  padding: 20px 10px;
-  margin: 10px auto;
 `;

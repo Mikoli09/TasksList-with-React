@@ -1,5 +1,5 @@
 import Section from "../../../common/Section";
-import { MainContainer } from "../../../GlobalStyle";
+import { MainContainer } from "../../../common/MainContainer/styled";
 import { MainHeader } from "../../../common/MainHeader/styled";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import { useSelector } from "react-redux";

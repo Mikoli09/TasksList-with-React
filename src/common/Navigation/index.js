@@ -10,7 +10,7 @@ export const Navigation = () => (
             </li>
             <li>
                 <StyledNavLink to="/autor">
-                    Autor
+                    O autorze
                 </StyledNavLink>
             </li>
         </List>

@@ -25,7 +25,6 @@ export const useReplaceQueryParameter = () => {
 
         history.push(`${location.pathname}?${searchParams.toString()}`);
     };
-
     return replaceQueryParameter;
 };
 

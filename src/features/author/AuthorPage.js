@@ -1,4 +1,4 @@
-import { MainContainer } from "../../GlobalStyle"
+import { MainContainer } from "../../common/MainContainer/styled";
 import { MainHeader } from "../../common/MainHeader/styled";
 import Section from "../../common/Section";
 import { Img } from "./styled";
@@ -7,7 +7,7 @@ import { Paragraph } from "../../common/Paragraph/styled";
 const AuthorPage = () => (
     <MainContainer>
         <MainHeader>
-            Informacje o autorze
+            O autorze
         </MainHeader>
         <Section
             headerContent={"Marcin Osojca"}

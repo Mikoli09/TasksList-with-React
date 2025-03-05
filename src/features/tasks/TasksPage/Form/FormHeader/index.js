@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { HeaderContainer, HeaderSpan } from "../../TasksList/TasksListHeader/styled";
+import { HeaderContainer, HeaderSpan } from "../../../../../common/HeaderContainer/styled";
 import { fetchExampleTasks, selectTasksState } from "../../../tasksSlice";
 import { HeaderButton } from "../../../../../common/HeaderButton/styled";
 

@@ -2,7 +2,7 @@ import Form from "./Form/index";
 import TasksList from "./TasksList/index";
 import TasksListHeader from "./TasksList/TasksListHeader";
 import Section from "../../../common/Section";
-import { MainContainer } from "../../../GlobalStyle";
+import { MainContainer } from "../../../common/MainContainer/styled";
 import { MainHeader } from "../../../common/MainHeader/styled";
 import Search from "./Search";
 import { FormHeader } from "./Form/FormHeader";

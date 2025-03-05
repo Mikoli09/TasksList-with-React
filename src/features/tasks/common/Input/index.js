@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const InputContainer = styled.div`
+    display: flex;
+    padding: 15px;
+`;
+
 export const Input = styled.input`
     padding: 10px;
     max-width: 100%;
@@ -8,3 +13,4 @@ export const Input = styled.input`
     border-width: 2px;
     flex-grow: 1;
 `;
+

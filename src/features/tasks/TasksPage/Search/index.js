@@ -1,5 +1,5 @@
 import { Input } from "../../common/Input";
-import { InputContainer } from "./styled";
+import { InputContainer } from "../../common/Input";
 import { nanoid } from "@reduxjs/toolkit";
 import searchQueryParamName from "../searchQueryParamName";
 import { useQueryParameters, useReplaceQueryParameter } from "../queryParameters";

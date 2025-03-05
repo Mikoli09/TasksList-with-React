@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
 import { HeaderButton } from "../../../../common/HeaderButton/styled";
-import { HeaderContainer } from "../../TasksPage/TasksList/TasksListHeader/styled";
-import { HeaderSpan } from "../../TasksPage/TasksList/TasksListHeader/styled";
+import { HeaderContainer } from "../../../../common/HeaderContainer/styled";
+import { HeaderSpan } from "../../../../common/HeaderContainer/styled";
 
 
 export const TaskPageHeader = ({ task }) => {
