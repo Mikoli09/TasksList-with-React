@@ -1,30 +1,25 @@
-import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom";
 import { Input } from "../../common/Input";
 import { InputContainer } from "./styled";
 import { nanoid } from "@reduxjs/toolkit";
 import searchQueryParamName from "../searchQueryParamName";
+import { useQueryParameters, useReplaceQueryParameter } from "../queryParameters";
 
 const Search = () => {
-    const location = useLocation();
-    const history = useHistory();
-    const query = (new URLSearchParams(location.search)).get(searchQueryParamName);
+    const query = useQueryParameters(searchQueryParamName);
+    const replaceQueryParameter = useReplaceQueryParameter();
 
-
-    const onInputChange = (event) => {
-        const searchParams = new URLSearchParams(location.search);
-        if (event.target.value.trim() === "") {
-            searchParams.delete(searchQueryParamName);
-        } else {
-            searchParams.set(searchQueryParamName, event.target.value);
-        }
-        history.push(`${location.pathname}?${searchParams.toString()}`);
-    }
+    const onInputChange = ({ target }) => {
+        replaceQueryParameter({
+            key: searchQueryParamName,
+            value: target.value.trim() !== "" ? target.value : undefined,
+        });
+    };
 
     return (
         <InputContainer>
             <Input
                 id={nanoid()}
-                placeholder="Wyszukaj"
+                placeholder="Filtruj zadania"
                 value={query || ""}
                 onChange={onInputChange}
             />
