@@ -13,7 +13,6 @@ export const useReplaceQueryParameter = () => {
     const history = useHistory();
 
     const replaceQueryParameter = ({ key, value }) => {
-
         const searchParams = new URLSearchParams(location.search);
 
         if (value === undefined) {
@@ -22,7 +21,6 @@ export const useReplaceQueryParameter = () => {
         else {
             searchParams.set(key, value)
         };
-
         history.push(`${location.pathname}?${searchParams.toString()}`);
     };
     return replaceQueryParameter;

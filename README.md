@@ -21,7 +21,7 @@ Welcome to the **Tasks list Manager** app, where you can easily manage your task
 
 ### Stay organized and keep track of your tasks with ease. Enjoy! 😎  
 
-![taskslistGIF](./assets/tasksList.gif)
+![tasksListGIF](./assets/tasksList.gif)
 
 
 ## Demo:

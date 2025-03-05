@@ -3,7 +3,6 @@ import { HeaderButton } from "../../../../common/HeaderButton/styled";
 import { HeaderContainer } from "../../../../common/HeaderContainer/styled";
 import { HeaderSpan } from "../../../../common/HeaderContainer/styled";
 
-
 export const TaskPageHeader = ({ task }) => {
     const history = useHistory();
 

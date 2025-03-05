@@ -11,28 +11,25 @@ const TaskPage = () => {
     const params = useParams();
     const task = useSelector((state) => selectTaskById(state, params.id));
 
-    const paragraphContent = (task) => {
+    const paragraphContent = (task) => (
+        task ? `Ukończone: ${task.status === "done" ? "TAK" : "NIE"}` : "😒"
+    );
 
-        return (
-            task ? `Ukończone: ${task.status === "done" ? "TAK" : "NIE"}` : "😒" 
-        )
-    };
-
-return (
-    <MainContainer>
-        <MainHeader>
-            Szczegóły zadania
-        </MainHeader>
-        <Section
-            headerContent={
-                <TaskPageHeader task={task || undefined} />
-            }
-            sectionContent={
-                <TaskPageParagraph>{paragraphContent(task)}</TaskPageParagraph>
-            }
-        />
-    </MainContainer>
-)
+    return (
+        <MainContainer>
+            <MainHeader>
+                Szczegóły zadania
+            </MainHeader>
+            <Section
+                headerContent={
+                    <TaskPageHeader task={task || undefined} />
+                }
+                sectionContent={
+                    <TaskPageParagraph>{paragraphContent(task)}</TaskPageParagraph>
+                }
+            />
+        </MainContainer>
+    )
 };
 
 export default TaskPage;
