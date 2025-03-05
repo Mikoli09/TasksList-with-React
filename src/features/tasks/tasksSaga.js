@@ -1,4 +1,5 @@
 import { call, delay, put, select, takeEvery } from "redux-saga/effects";
+import { toast } from "react-toastify";
 import { getExampleTasks } from "./getExampleTasks";
 import { fetchExampleTasks, selectTasksTable, setTasks, setLoadingFalse } from "./tasksSlice";
 import { saveTasksInLocalStorage } from "./tasksLocalStorage";
@@ -10,7 +11,7 @@ function* fetchExampleTasksHandler() {
         yield put(setTasks(exampleTasks));
     }
     catch (error) {
-        yield call(alert, "Nie udało się pobrać zawartości. Spróbuj później.");
+        toast.error("Nie udało się pobrać zawartości 😒 Spróbuj później.")
     }
     yield put(setLoadingFalse());
 }

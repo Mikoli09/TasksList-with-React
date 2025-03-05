@@ -3,6 +3,7 @@ import TasksPage from "./features/tasks/TasksPage"
 import AuthorPage from "./features/author/AuthorPage";
 import TaskPage from "./features/tasks/TaskPage/index";
 import { Navigation } from "./common/Navigation";
+import { ToastContainer } from "react-toastify";
 
 export default () => (
     <HashRouter>
@@ -21,5 +22,6 @@ export default () => (
                 <Redirect to="/zadania" />
             </Route>
         </Switch>
+        <ToastContainer />
     </HashRouter>
 ); 
