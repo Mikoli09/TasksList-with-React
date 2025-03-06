@@ -9,10 +9,7 @@ export const TaskPageHeader = ({ task }) => {
     return (
         <HeaderContainer>
             <HeaderSpan>{task ? task.content : "Nie znaleziono zadania"}</HeaderSpan>
-            <HeaderButton
-                onClick={() => history.push(`/zadania`)}
-            > Wstecz
-            </HeaderButton>
+            <HeaderButton onClick={() => history.push(`/zadania`)}> Wstecz</HeaderButton>
         </HeaderContainer>
     )
 };

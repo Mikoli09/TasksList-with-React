@@ -11,7 +11,7 @@ const TaskPage = () => {
     const params = useParams();
     const task = useSelector((state) => selectTaskById(state, params.id));
 
-    const paragraphContent = (task) => (
+    const getParagraphContent = (task) => (
         task ? `Ukończone: ${task.status === "done" ? "TAK" : "NIE"}` : "😒"
     );
 
@@ -25,7 +25,7 @@ const TaskPage = () => {
                     <TaskPageHeader task={task || undefined} />
                 }
                 sectionContent={
-                    <TaskPageParagraph>{paragraphContent(task)}</TaskPageParagraph>
+                    <TaskPageParagraph>{getParagraphContent(task)}</TaskPageParagraph>
                 }
             />
         </MainContainer>

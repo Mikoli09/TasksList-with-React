@@ -25,15 +25,13 @@ const Form = () => {
             content: newTaskContentTrimmed,
             status: "toDo",
             id: nanoid(),
-        }
-        ));
+        }));
         setNewTaskContent("");
         setFocusOnInput();
     };
 
     return (
-        <StyledForm
-            onSubmit={onFormSubmit}>
+        <StyledForm onSubmit={onFormSubmit}>
             <Input
                 id={nanoid()}
                 ref={inputRef}
