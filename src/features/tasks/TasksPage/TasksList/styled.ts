@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export const Container = styled.div`
     padding: 10px;
@@ -13,7 +14,7 @@ export const List = styled.ul`
     list-style: none;
 `;
 
-export const Task = styled.li`
+export const Task = styled.li<{$hide?: boolean}>`
     display: flex;
     align-items: center;
     padding: 10px 5px;
@@ -25,7 +26,7 @@ export const Task = styled.li`
     `}
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{$checkmark?: boolean; $remove?: boolean}>`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +76,7 @@ export const Content = styled.span`
     flex-grow: 1;
 `;
 
-export const TaskLink = styled(Link)`
+export const TaskLink = styled(Link)<{$lineThrough?: boolean}>`
     text-decoration: none;
     color: black;
     display: inline-block;

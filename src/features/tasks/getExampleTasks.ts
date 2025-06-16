@@ -1,3 +1,5 @@
+import { TaskItem } from "../types";
+
 const exampleTasksPath = "/TasksList-with-React/exampleTasks.json";
 
 export const getExampleTasks = async () => {
@@ -7,6 +9,6 @@ export const getExampleTasks = async () => {
         new Error(response.statusText);
     }
 
-    return await response.json();
+    return (await response.json()) as TaskItem[];
 };
 

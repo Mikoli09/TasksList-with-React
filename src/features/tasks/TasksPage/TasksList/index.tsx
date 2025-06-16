@@ -4,14 +4,15 @@ import { selectTasksState, removeTask, toggleTaskDone, selectTasksByQuery } from
 import { TaskLink } from "./styled";
 import { useQueryParameters } from "../queryParameters";
 import searchQueryParamName from "../searchQueryParamName";
+import { TaskItem } from "../../../types";
 
 const TasksList = () => {
     const query = useQueryParameters(searchQueryParamName);
-    const tasksTable = useSelector(state => selectTasksByQuery(state, query));
+    const tasksTable: TaskItem[] = useSelector(state => selectTasksByQuery(state, query));
     const { hideDone } = useSelector(selectTasksState);
     const dispatch = useDispatch();
 
-    const isTaskDone = index => tasksTable[index].status === "done";
+    const isTaskDone = (index: number) => tasksTable[index].status === "done";
 
     return (
         <Container>

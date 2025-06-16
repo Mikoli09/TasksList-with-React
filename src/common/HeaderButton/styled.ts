@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 
-export const HeaderButton = styled.button`
+export const HeaderButton = styled.button<{$notVisible?: boolean}>`
     font-size: 18px;
     color: teal;
     border: none;
