@@ -1,9 +1,14 @@
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { useHistory } from "react-router-dom";
 import { HeaderButton } from "../../../../common/HeaderButton/styled";
 import { HeaderContainer } from "../../../../common/HeaderContainer/styled";
 import { HeaderSpan } from "../../../../common/HeaderContainer/styled";
+import { TaskItem } from "../../../types";
 
-export const TaskPageHeader = ({ task }) => {
+interface TaskPageHeaderProps {
+    task?: TaskItem
+}
+
+export const TaskPageHeader = ({ task }: TaskPageHeaderProps) => {
     const history = useHistory();
 
     return (

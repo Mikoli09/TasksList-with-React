@@ -3,11 +3,13 @@ import { toast } from "react-toastify";
 import { getExampleTasks } from "./getExampleTasks";
 import { fetchExampleTasks, selectTasksTable, setTasks, setLoadingFalse } from "./tasksSlice";
 import { saveTasksInLocalStorage } from "./tasksLocalStorage";
+import { TaskItem } from "../types";
+import { RootState } from "../../store";
 
-function* fetchExampleTasksHandler() {
+function* fetchExampleTasksHandler(): Generator<any, void, TaskItem[]> {
     try {
-        yield delay(2000);
-        const exampleTasks = yield call(getExampleTasks);
+        yield delay(1000);
+        const exampleTasks: TaskItem[] = yield call(getExampleTasks);
         yield put(setTasks(exampleTasks));
     }
     catch (error) {
@@ -16,12 +18,14 @@ function* fetchExampleTasksHandler() {
     yield put(setLoadingFalse());
 }
 
-function* saveTasksInLocalStorageHandler() {
-    const tasksTable = yield select(selectTasksTable);
+function* saveTasksInLocalStorageHandler(): Generator<any, void, TaskItem[]> {
+    const tasksTable: TaskItem[] = yield select((state: RootState) =>
+    selectTasksTable(state)
+);
     yield call(saveTasksInLocalStorage, tasksTable);
 }
 
-export function* tasksSaga() {
+export function* tasksSaga(): Generator {
     yield takeEvery(fetchExampleTasks.type, fetchExampleTasksHandler);
     yield takeEvery("*", saveTasksInLocalStorageHandler);
 }

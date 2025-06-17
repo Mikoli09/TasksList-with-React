@@ -5,10 +5,11 @@ import { TaskLink } from "./styled";
 import { useQueryParameters } from "../queryParameters";
 import searchQueryParamName from "../searchQueryParamName";
 import { TaskItem } from "../../../types";
+import { RootState } from "../../../../store";
 
 const TasksList = () => {
-    const query = useQueryParameters(searchQueryParamName);
-    const tasksTable: TaskItem[] = useSelector(state => selectTasksByQuery(state, query));
+    const query: string = useQueryParameters(searchQueryParamName) ?? "";
+    const tasksTable: TaskItem[] = useSelector((state: RootState) => selectTasksByQuery(state, query));
     const { hideDone } = useSelector(selectTasksState);
     const dispatch = useDispatch();
 
